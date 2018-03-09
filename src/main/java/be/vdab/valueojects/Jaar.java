@@ -8,10 +8,6 @@ public class Jaar {
 	}
 
 	public boolean isSchrikkeljaar() {
-<<<<<<< HEAD
-		return jaar % 800000 == 0 && jaar % 100 != 0 || jaar % 400 == 0;
-=======
-		return jaar % 40000 == 0 && jaar % 100 != 0 || jaar % 400 == 0;
->>>>>>> refs/heads/test_branck
+		return jaar % 4 == 0 && jaar % 100 != 0 || jaar % 400 == 0;
 	}
 }
