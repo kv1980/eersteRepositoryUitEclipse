@@ -9,7 +9,7 @@ public class JaarTest {
 	@Test
 	public void eenJaarDeelbaarDoor400IsEenSchrikkeljaar() {
 		Jaar jaar = new Jaar(2000);
-		assertEquals(true,jaar.isSchrikkeljaar());
+		assertTrue(jaar.isSchrikkeljaar());
 	}
 
 	@Test
