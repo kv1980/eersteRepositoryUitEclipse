@@ -26,4 +26,19 @@ public class JaarTest {
 	public void eenJaarOndeelbaarDoor4IsGeenSchrikkeljaar() {
 		assertFalse(new Jaar(2018).isSchrikkeljaar());
 	}
+	
+	@Test
+	public void equals_op_twee_dezelfde_jaren_moet_true_zijn() {
+		assertEquals(new Jaar(2015),new Jaar(2015));
+	}
+	
+	@Test
+	public void equals_op_twee_verschillende_jaren_moet_false_zijn() {
+		assertNotEquals(new Jaar(2015),new Jaar(2018));
+	}
+	
+	@Test
+	public void hashCode_van_dezelfde_jaren_moet_gelijk_zijn() {
+		assertEquals(new Jaar(2015).hashCode(),new Jaar(2015).hashCode());
+		}
 }
