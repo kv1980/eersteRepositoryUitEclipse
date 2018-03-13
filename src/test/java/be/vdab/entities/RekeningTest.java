@@ -49,7 +49,7 @@ public class RekeningTest {
 		new Rekening("063-1547564-63");
 	}
 	
-	@Test
+	@Test (expected = IllegalArgumentException.class)
 	public void een_rekeningnummer_met_12_cijfers_en_een_controlegetal_0_en_niet_eindigend_op_97_is_niet_OK() {
 		new Rekening("063-1547503-96");
 	}
