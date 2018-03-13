@@ -12,11 +12,11 @@ public class RekeningTest {
 
 	@Before
 	public void before() {
-		rekening = new Rekening();
+		rekening = new Rekening("063-1547564-61");
 	}
 
 	/**
-	 * DE TESTEN VOOR HET OPSTARTEN VAN EEN REKENING
+	 * DE TESTEN VOOR HET REKENINGNUMMER BIJ HET OPSTARTEN VAN EEN REKENING
 	 */
 
 	@Test
@@ -54,16 +54,19 @@ public class RekeningTest {
 		new Rekening(null);
 	}
 
+	/**
+	 * DE TESTEN VOOR HET SALDO BIJ HET OPSTARTEN VAN EEN REKENING
+	 */
+
 	@Test
 	public void saldo_nieuwe_rekening_is_0() {
 		assertEquals(0, rekening.getSaldo().compareTo(BigDecimal.ZERO));
 	}
 
-	
 	/**
 	 * DE TESTEN VOOR HET STORTEN OP EEN REKENING
 	 */
-	
+
 	@Test
 	public void saldo_na_eerste_storting_is_gelijk_aan_bedrag_storting() {
 		rekening.storten(BigDecimal.valueOf(200));
@@ -93,7 +96,6 @@ public class RekeningTest {
 		rekening.storten(null);
 	}
 
-	
 	/**
 	 * DE TESTEN VOOR METHODS toString, equals en hashCode
 	 */
