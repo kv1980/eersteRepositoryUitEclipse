@@ -43,6 +43,16 @@ public class RekeningTest {
 	public void een_rekeningnummer_met_12_cijfers_zonder_streepjes_is_niet_OK() {
 		new Rekening("0631547564610");
 	}
+	
+	@Test (expected = IllegalArgumentException.class)
+	public void een_rekeningnummer_met_12_cijfers_zonder_correct_controlegetal_is_niet_OK() {
+		new Rekening("063-1547564-63");
+	}
+	
+	@Test
+	public void een_rekeningnummer_met_12_cijfers_en_een_controlegetal_0_en_niet_eindigend_op_97_is_niet_OK() {
+		new Rekening("063-1547503-96");
+	}
 
 	@Test(expected = IllegalArgumentException.class)
 	public void een_rekeningnummer_mag_niet_leeg_zijn() {
